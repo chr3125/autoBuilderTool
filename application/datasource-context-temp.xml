@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:util="http://www.springframework.org/schema/util" 
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"
+	xmlns:encryption="http://www.jasypt.org/schema/encryption" 
+	xmlns:jee="http://www.springframework.org/schema/jee"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+				http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+				http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+				http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc.xsd
+				http://www.jasypt.org/schema/encryption http://www.jasypt.org/schema/encryption/jasypt-spring31-encryption-1.xsd
+				http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee.xsd"
+	default-lazy-init="true">
+
+	<!-- jndi 활용 -->
+	<!-- 
+	<jee:jndi-lookup id="actualDataSource" jndi-name="jdbc/DatabaseName" 
+		expected-type="javax.sql.DataSource" /> 
+	-->
+	
+	<!-- 자원 암호화 http://alm.emro.co.kr/browse/RNDETNA-329 -->
+	<!-- 환경변수 이용 -->
+	<!-- 
+	<encryption:encryptor-config id="propertiesEncryptorConfig" password-env-name="encrypted.properties.password" 
+		password-sys-property-name="encrypted.properties.password" />
+	-->
+	
+	<!-- java option 이용 -->
+	<!-- 
+	<encryption:encryptor-config id="propertiesEncryptorConfig" password-sys-property-name="encrypted.properties.password" /> 
+	-->
+	<!-- 
+	<encryption:string-encryptor id="propertiesEncryptor" config-bean="propertiesEncryptorConfig" /> 
+	-->
+	<!-- 
+	<encryption:encryptable-properties id="encrytedProperties" encryptor="propertiesEncryptor" 
+		location="classpath:META-INF/smartsuite/site/encrypted.properties"/> 
+	-->
+
+	<!-- Simple DataSource -->
+	<!-- 
+	<bean id="actualDataSource" 
+		class="org.springframework.jdbc.datasource.SimpleDriverDataSource"> 
+		<property name="url" value="#{encrytedProperties['default.datasource.url']}" /> 
+		<property name="username" value="#{encrytedProperties['default.datasource.username']}" /> 
+		<property name="password" value="#{encrytedProperties['default.datasource.password']}" /> 
+		<property name="driverClass" value="oracle.jdbc.driver.OracleDriver" /> 
+	</bean> 
+	-->	
+	<!-- Connection Pool -->
+	<!-- 
+	<bean id="actualDataSource"
+		class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg>
+			<bean class="com.zaxxer.hikari.HikariConfig">
+				<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
+				<property name="jdbcUrl" value="#{encrytedProperties['default.datasource.url']}" />
+				<property name="username" value="#{encrytedProperties['default.datasource.username']}" />
+				<property name="password" value="#{encrytedProperties['default.datasource.password']}" />
+				<property name="maximumPoolSize" value="10" />
+				<property name="maxLifetime" value="30000" />
+    			<property name="idleTimeout" value="30000" />						
+			</bean>
+		</constructor-arg>
+	</bean> 	
+	-->
+	
+	<!--
+	<bean id="actualDataSource"
+		class="org.springframework.jdbc.datasource.SimpleDriverDataSource">		
+		<property name="url" value="${default.datasource.url}"/>		
+		<property name="username" value="${default.datasource.username}" />
+		<property name="password" value="${default.datasource.password}" />
+		<property name="driverClass" value="${default.datasource.driverclassname}" />
+	</bean>
+	-->
+	
+	<!-- http://alm.emro.co.kr/browse/NFCH-795 DataSource Connection Pool 설정 -->
+	<bean id="actualDataSource"
+		class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg>
+			<bean class="com.zaxxer.hikari.HikariConfig">
+				<property name="driverClassName" value="${default.datasource.driverclassname}" />
+				<property name="jdbcUrl" value="${default.datasource.url}" />
+				<property name="username" value="${default.datasource.username}" />
+				<property name="password" value="${default.datasource.password}" />
+				<property name="maximumPoolSize" value="6" />
+				<property name="maxLifetime" value="30000" />
+    			<property name="idleTimeout" value="30000" />						
+			</bean>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="actualMySQLDataSource"
+		class="com.zaxxer.hikari.HikariDataSource">
+		<constructor-arg>
+			<bean class="com.zaxxer.hikari.HikariConfig">
+				<property name="driverClassName" value="${default.datasource.driverclassname}" />
+				<property name="jdbcUrl" value="${default.datasource.url}" />
+				<property name="username" value="${default.datasource.username}" />
+				<property name="password" value="${default.datasource.password}" />
+				<property name="maximumPoolSize" value="6" />
+				<property name="maxLifetime" value="30000" />
+    			<property name="idleTimeout" value="30000" />						
+			</bean>
+		</constructor-arg>
+	</bean>
+	
+	<bean id="sqlIdLoggingListener" class="smartsuite.log.core.override.SqlIdLoggingListener" >
+		<property name="includeParameter" 	  value="true"  />
+		<property name="useReplaceParameter"  value="true"  />
+		<property name="useReplaceWhitespace" value="false" />
+		<property name="useExcludeSqlLogging" value="true"  />
+		<property name="logLevel" value="INFO" />
+		<property name="includeSqlId" 	  value="true"  />
+		<!-- Query ElapsedTime Level (millisecond) -->
+		<property name="timeLevelNormal"   value="1000"/>
+		<property name="timeLevelWarning"  value="5000"/>
+		<property name="timeLevelCritical" value="10000"/>
+	</bean>
+	<!-- 로깅을 위한 프록시 datasource -->
+    <bean id="proxyMySQLDataSource" class="net.ttddyy.dsproxy.support.ProxyDataSource">
+    <property name="dataSource" ref="actualMySQLDataSource" />
+    <property name="dataSourceName" value="default" />
+    <property name="listener" ref="slf4JQueryLoggingListener" />
+</bean>
+     
+	<bean id="proxyDataSource" class="net.ttddyy.dsproxy.support.ProxyDataSource">
+		<property name="dataSource" ref="actualDataSource" />
+		<property name="dataSourceName" value="default" />
+		<property name="listener" ref="sqlIdLoggingListener" />
+	</bean>
+	
+	<!-- http://alm.emro.co.kr/browse/NFCH-797 ChainedTransactionManager 설정 -->
+	<bean id="dataSource"
+	    class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
+	    <property name="targetDataSource" ref="proxyDataSource" />
+	    <!-- DB 접근권한이 없는 DataSource의 경우 설정-->
+	    <!-- <property name="defaultAutoCommit" value="false" /> -->
+	    <!-- <property name="defaultTransactionIsolationName" value="TRANSACTION_READ_COMMITTED" /> -->
+	</bean>
+
+	<bean id="mysqlDataSource" class="org.springframework.jdbc.datasource.LazyConnectionDataSourceProxy">
+	    <property name="targetDataSource" ref="proxyMySQLDataSource"/>
+	</bean>
+</beans>
