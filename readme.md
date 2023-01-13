@@ -45,41 +45,18 @@
 ### <img src="https://img.shields.io/badge/Jira-0052CC?style=flat-square&logo=Jira&logoColor=white"> JIRA Issue Tracking
 </div>
 
-<style>
-.v9 {
-    display: inline-block;
-    height: 177px;
-    width: 175px;
-    background: url(http://alm.emro.co.kr/pub_portal/img/btn_version.png) no-repeat;
-    background-position: left 0px;
-    transition: background .2s;
-}
-
-.v8 {
-    display: inline-block;
-    width: 175px;
-    height: 177px;
-    background: url(http://alm.emro.co.kr/pub_portal/img/btn_version.png) no-repeat;
-    background-position: left -227px;
-    transition: background .2s;
-}
-
-.v7 {
-    display: inline-block;
-    width: 175px;
-    height: 177px;
-    background: url(http://alm.emro.co.kr/pub_portal/img/btn_version.png) no-repeat;
-    background-position: left -454px;
-    transition: background .2s;
-}
-</style>
 
 <div style="margin-top: 20px;">
-<a href="http://alm.emro.co.kr/login.jsp?os_destination=%2Fissues%2F%3Fjql%3Dproject%2520%253D%2520SFNSUPP" target="_top" class="v9"></a>
-    <a href="http://alm.emro.co.kr/login.jsp?os_destination=%2Fissues%2F%3Fjql%3Dproject%2520%253D%2520SFNSUPP" target="_top" 
-class="v8"></a>
-    <a href="http://alm.emro.co.kr/login.jsp?os_destination=%2Fissues%2F%3Fjql%3Dproject%2520%253D%2520SFNSUPP" target="_top" 
-class="v7"></a>
+
+<a href="http://alm.emro.co.kr/login.jsp?os_destination=%2Fissues%2F%3Fjql%3Dproject%2520%253D%2520SFNSUPP" target="_top">
+<img src="./src/main/img/card_version9.png">
+</a>
+    <a href="http://alm.emro.co.kr/login.jsp?os_destination=%2Fissues%2F%3Fjql%3Dproject%2520%253D%2520SFNSUPP" target="_top" >
+<img src="./src/main/img/card_version8.png">
+</a>
+    <a href="http://alm.emro.co.kr/login.jsp?os_destination=%2Fissues%2F%3Fjql%3Dproject%2520%253D%2520SFNSUPP" target="_top">
+<img src="./src/main/img/card_version7.png">
+</a>
 </div>
 
 
@@ -89,169 +66,15 @@ class="v7"></a>
 ### <img src="https://img.shields.io/badge/Confluence-0052CC?style=flat-square&logo=Jira&logoColor=white"> Solution Guide
 </div>
 
-
 <div style="display: flex; flex-direction: column; width: 100%; padding: 0 30px;">
-    <a href="http://techdocs.emro.co.kr/pages/viewpage.action?pageId=9683663" target="_blank" style="display: block;
-    width: 100%;
-    height: 30px;
-    background: #e8eced;
-    border-radius: 5px;
-    margin-bottom: 7px;
-    padding: 0 15px;">
-        <i style="display: inline-block;
-    width: 22px;
-    height: 22px;
-    background: url(http://alm.emro.co.kr/pub_portal/img/icon_link.png) no-repeat;
-    background-position: 0 -284px;
-    vertical-align: middle;"></i><b style="display: inline-block;
-    font-size: 14px;
-    color: #333;
-    line-height: 30px;
-    padding-left: 12px;
-    letter-spacing: -.5px;">개발환경 가이드</b></a>						
-    <a href="http://techdocs.emro.co.kr/display/SS9/Smart+Suite+9" target="_blank" style="display: block;
-    width: 100%;
-    height: 30px;
-    background: #e8eced;
-    border-radius: 5px;
-    margin-bottom: 7px;
-    padding: 0 15px;">
-        <i style="display: inline-block;
-    width: 22px;
-    height: 22px;
-    background: url(http://alm.emro.co.kr/pub_portal/img/icon_link.png) no-repeat;
-    background-position: 0 -193px;
-    vertical-align: middle;"></i><b style="display: inline-block;
-    font-size: 14px;
-    color: #333;
-    line-height: 30px;
-    padding-left: 12px;
-    letter-spacing: -.5px;">솔루션 가이드</b></a>
-    <a href="http://techdocs.emro.co.kr/pages/viewpage.action?pageId=5310026" target="_blank" style="display: block;
-    width: 100%;
-    height: 30px;
-    background: #e8eced;
-    border-radius: 5px;
-    margin-bottom: 7px;
-    padding: 0 15px;">
-        <i style="display: inline-block;
-    width: 22px;
-    height: 22px;
-    background: url(http://alm.emro.co.kr/pub_portal/img/icon_link.png) no-repeat;
-background-position: 0 -193px;
-    vertical-align: middle;"></i><b style="display: inline-block;
-    font-size: 14px;
-    color: #333;
-    line-height: 30px;
-    padding-left: 12px;
-    letter-spacing: -.5px;">프레임워크 가이드</b></a>						
-    <a href="http://techdocs.emro.co.kr/pages/viewpage.action?pageId=9506376" target="_blank" style="display: block;
-    width: 100%;
-    height: 30px;
-    background: #e8eced;
-    border-radius: 5px;
-    margin-bottom: 7px;
-    padding: 0 15px;">
-        <i style="display: inline-block;
-    width: 22px;
-    height: 22px;
-    background: url(http://alm.emro.co.kr/pub_portal/img/icon_link.png) no-repeat;
-    background-position: 0 -49px;
-    vertical-align: middle;"></i><b style="display: inline-block;
-    font-size: 14px;
-    color: #333;
-    line-height: 30px;
-    padding-left: 12px;
-    letter-spacing: -.5px;">성능개선 가이드</b></a>
-    <a href="http://techdocs.emro.co.kr/pages/viewpage.action?pageId=3344542" target="_blank" style="display: block;
-    width: 100%;
-    height: 30px;
-    background: #e8eced;
-    border-radius: 5px;
-    margin-bottom: 7px;
-    padding: 0 15px;">
-        <i style="display: inline-block;
-    width: 22px;
-    height: 22px;
-    background: url(http://alm.emro.co.kr/pub_portal/img/icon_link.png) no-repeat;
-    background-position: 0 -96px;
-    vertical-align: middle;"></i><b style="display: inline-block;
-    font-size: 14px;
-    color: #333;
-    line-height: 30px;
-    padding-left: 12px;
-    letter-spacing: -.5px;">보안 가이드</b></a>
-    <a href="http://techdocs.emro.co.kr/pages/viewpage.action?pageId=9667520" target="_blank" style="display: block;
-    width: 100%;
-    height: 30px;
-    background: #e8eced;
-    border-radius: 5px;
-    margin-bottom: 7px;
-    padding: 0 15px;">
-        <i style="display: inline-block;
-    width: 22px;
-    height: 22px;
-    background: url(http://alm.emro.co.kr/pub_portal/img/icon_link.png) no-repeat;
-    vertical-align: middle;"></i><b style="display: inline-block;
-    font-size: 14px;
-    color: #333;
-    line-height: 30px;
-    padding-left: 12px;
-    letter-spacing: -.5px;">컨버전 가이드</b></a>
-    <a href="http://techdocs.emro.co.kr/display/SS9/Solution+Release+Note" target="_blank" style="display: block;
-    width: 100%;
-    height: 30px;
-    background: #e8eced;
-    border-radius: 5px;
-    margin-bottom: 7px;
-    padding: 0 15px;">
-        <i style="display: inline-block;
-    width: 22px;
-    height: 22px;
-    background: url(http://alm.emro.co.kr/pub_portal/img/icon_link.png) no-repeat;
-background-position: 0 -144px;
-    vertical-align: middle;"></i><b style="display: inline-block;
-    font-size: 14px;
-    color: #333;
-    line-height: 30px;
-    padding-left: 12px;
-    letter-spacing: -.5px;">솔루션 릴리즈 노트</b></a>
-    <a href="http://techdocs.emro.co.kr/display/SF9/Release+Note" target="_blank" style="display: block;
-    width: 100%;
-    height: 30px;
-    background: #e8eced;
-    border-radius: 5px;
-    margin-bottom: 7px;
-    padding: 0 15px;">
-        <i style="display: inline-block;
-    width: 22px;
-    height: 22px;
-    background: url(http://alm.emro.co.kr/pub_portal/img/icon_link.png) no-repeat;
-    background-position: 0 -144px;
-    vertical-align: middle;"></i><b style="display: inline-block;
-    font-size: 14px;
-    color: #333;
-    line-height: 30px;
-    padding-left: 12px;
-    letter-spacing: -.5px;">라이브러리 릴리즈 노트</b></a>
-    <a href="http://techdocs.emro.co.kr/pages/viewpage.action?pageId=9533126" target="_blank" style="display: block;
-    width: 100%;
-    height: 30px;
-    background: #e8eced;
-    border-radius: 5px;
-    margin-bottom: 7px;
-    padding: 0 15px;">
-        <i style="display: inline-block;
-    width: 22px;
-    height: 22px;
-    background: url(http://alm.emro.co.kr/pub_portal/img/icon_link.png) no-repeat;
-    background-position: 0 -619px;
-    vertical-align: middle;"></i><b style="display: inline-block;
-    font-size: 14px;
-    color: #333;
-    line-height: 30px;
-    padding-left: 12px;
-    letter-spacing: -.5px;">동영상 교육</b></a>
+    <a href="http://techdocs.emro.co.kr/pages/viewpage.action?pageId=9683663" target="_blank"><img src="./src/main/img/guidelist_01.png"></a>						
+    <a href="http://techdocs.emro.co.kr/display/SS9/Smart+Suite+9" target="_blank" ><img src="./src/main/img/guidelist_02.png"></a>	
+    <a href="http://techdocs.emro.co.kr/pages/viewpage.action?pageId=5310026" target="_blank"><img src="./src/main/img/guidelist_03.png"></a>						
+    <a href="http://techdocs.emro.co.kr/pages/viewpage.action?pageId=9506376" target="_blank"><img src="./src/main/img/guidelist_04.png"></a>	
+    <a href="http://techdocs.emro.co.kr/pages/viewpage.action?pageId=3344542" target="_blank" ><img src="./src/main/img/guidelist_05.png"></a>	
+    <a href="http://techdocs.emro.co.kr/pages/viewpage.action?pageId=9667520" target="_blank" ><img src="./src/main/img/guidelist_06.png"></a>	
+    <a href="http://techdocs.emro.co.kr/display/SS9/Solution+Release+Note" target="_blank" ><img src="./src/main/img/guidelist_07.png"></a>	
+    <a href="http://techdocs.emro.co.kr/display/SF9/Release+Note" target="_blank"><img src="./src/main/img/guidelist_08.png"></a>	
+    <a href="http://techdocs.emro.co.kr/pages/viewpage.action?pageId=9533126" target="_blank" ><img src="./src/main/img/guidelist_09.png"></a>	
 </div>
-
 </div>
